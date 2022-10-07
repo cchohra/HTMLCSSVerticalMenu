@@ -1,0 +1,133 @@
+
+/* Pick your own colors, font-size, and dimensions */
+
+:root {
+  font-size: 12px;
+  --background-color: #ff8906;
+  --background-color-hover: #ffdeb8;
+  --submenu-background-color: #e67d05;
+  --text-color: #fffffe;
+  --text-color-hover: #0f0e17;
+  --item-width: 120px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+aside {
+  position: fixed;
+  left: calc(-1 * var(--item-width));
+  top: 0;
+  height: 100vh;
+  background-color: var(--background-color);
+  transition: left 0.2s ease-out;
+  z-index: 1;
+}
+
+#toggle-menu:checked ~ aside {
+  left: 0;
+}
+
+.menu {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.menu-item a {
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  width: var(--item-width);
+  padding: 1rem;
+  font-weight: 700;
+  transition: color 0.2s linear,
+    background-color 0.2s linear,
+    border 0.2s linear;
+}
+
+.menu-item > a:hover{
+  color: var(--text-color-hover);
+  background-color: var(--background-color-hover);
+  border-left: thick var(--background-color) outset;
+}
+
+.menu-item > a:active{
+  border-left: 0px;
+}
+
+.submenu > a:after {
+  content: "\25BC";
+  float: inline-end;
+}
+
+.submenu:hover > a:after {
+  content: "\25B2";
+  float: inline-end;
+}
+
+.submenu-content {
+  background-color: var(--submenu-background-color);
+  display: flex;
+  opacity: 0;
+  flex-direction: column;
+  transform: scaleY(0);
+  height: 0rem;
+  transform-origin: top;
+  transition: height 0.2s linear,
+    transform 0.2s linear;
+}
+
+.submenu:hover > .submenu-content {
+  height: 6.3rem;
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.submenu-content a {
+  padding-left: 2rem;
+}
+
+.fa-solid {
+  margin-right: 1rem;
+}
+
+#toggle-menu {
+  display: none;
+}
+
+#hide-menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: var(--text-color);
+  padding: 1rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+.sidebar {
+  display: inline-flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--background-color);
+}
+
+#show-menu {
+  color: var(--text-color);
+  padding: 1rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  padding: 0.2rem 0.5rem;
+}

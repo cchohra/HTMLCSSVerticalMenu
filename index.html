@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Menu Vertical</title>
+</head>
+
+<body>
+  <input type="checkbox" id="toggle-menu">
+  <aside>
+    <div class="menu">
+      <div class="menu-item"><a href="#"><i class="fa-solid fa-house-user"></i>Home</a></div>
+      <div class="menu-item"><a href="#"><i class="fa-solid fa-blog"></i>Blog</a></div>
+      <div class="menu-item submenu">
+        <a href="#"><i class="fa-solid fa-diagram-project"></i>Projects</a>
+        <div class="submenu-content">
+          <div class="menu-item"><a href="#"><i class="fa-solid fa-file-code"></i>Web</a></div>
+          <div class="menu-item"><a href="#"><i class="fa-solid fa-mobile-retro"></i>Mobile</a></div>
+        </div>
+      </div>
+      <div class="menu-item"><a href="#"><i class="fa-solid fa-hand-holding-dollar"></i>Pricing</a></div>
+      <div class="menu-item"><a href="#"><i class="fa-solid fa-address-book"></i>Contact</a></div>
+    </div>
+    <label for="toggle-menu">
+      <i class="fa-solid fa-angles-left" id="hide-menu"></i>
+    </label>
+  </aside>
+  <div class="container">
+    <div class="sidebar">
+      <label for="toggle-menu">
+        <i class="fa-solid fa-angles-right" id="show-menu"></i>
+      </label>
+    </div>
+    <div class="content">
+    </div>
+  </div>
+</body>
+
+</html>
